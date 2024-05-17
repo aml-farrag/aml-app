@@ -22,7 +22,7 @@
                           <td>{{$val->content}}</td>
                           
                           @if(Auth::user()->admin=="Yes")
-                          <td><a href="editpost/{{$val->id}}"><img src="./images/edit.png" alt="Edit"></a></td>
+                          <td><a href="editpost/{{$val->id}}">Edit</a></td>
                           <td>
                              <form action="{{route('deletepost')}}" method="post">
                                @csrf 
@@ -30,6 +30,9 @@
                               <input type="hidden" name="id" value="{{$val->id}}">
                               <input type="submit" value="delete">
                              </form>
+                             @else
+                             <td>Not allowed</td>
+                             <td>Not allowed</td>
                              @endif
                              <td><a href="/showpost/{{$val->id}}">Show</a></td>
                           </td>
