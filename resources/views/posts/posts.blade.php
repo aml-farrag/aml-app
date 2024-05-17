@@ -3,44 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
-    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th>Title</th>
-                          <th>content</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
-                          <th>Show</th>
-                        </tr>
-                      </thead>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     
+    <h1>Posts</h1><br>
     
-                      <tbody>
-                      @foreach ($post as $val)
+      <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+              <tr>
+               <th>Title</th>
+               <th>content</th>
+               <th>Show</th>
+               <th>Edit</th>
+               <th>Delete</th>
+               
+              </tr>
+            </thead>
+    
+              <tbody>
+                 @foreach ($post as $val)
                         <tr>
                           <td>{{$val->title}}</td>
                           <td>{{$val->content}}</td>
-                          
+                          <td><a href="/showpost/{{$val->id}}">Show</a></td>
                           @if(Auth::user()->admin=="Yes")
-                          <td><a href="editpost/{{$val->id}}">Edit</a></td>
-                          <td>
+                            <td><a href="editpost/{{$val->id}}">Edit</a></td>
+                            <td>
                              <form action="{{route('deletepost')}}" method="post">
                                @csrf 
                                @method("delete")
-                              <input type="hidden" name="id" value="{{$val->id}}">
-                              <input type="submit" value="delete">
+                               <input type="hidden" name="id" value="{{$val->id}}">
+                               <input type="submit" value="delete">
                              </form>
-                             @else
+                            </td>
+                          @else
                              <td>Not allowed</td>
                              <td>Not allowed</td>
-                             @endif
-                             <td><a href="/showpost/{{$val->id}}">Show</a></td>
-                          </td>
+                          @endif
+                             
+                            
                         </tr>
-                        @endforeach
+                 @endforeach
                         
-                      </tbody>
-                    </table>
+              </tbody>
+    </table>
 </head>
 <body>
     

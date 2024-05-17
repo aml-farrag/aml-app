@@ -39,8 +39,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts');
-Route::get('/createpost',[PostController::class,'create'])->name('createpost');
+Route::get('/posts', [PostController::class, 'index'])->middleware(['auth'])->name('posts');
+Route::get('/createpost',[PostController::class,'create'])->middleware(['auth'])->name('createpost');
 Route::post('/postStore',[postController::class,'store'])->name('postStore');
 Route::get('/editpost/{id}',[postController::class,"edit"])->middleware(['auth'])->name('editpost');
 Route::post('/updatepost/{id}',[postController::class,'update'])->middleware(['auth'])->name('updatepost');
