@@ -1,10 +1,12 @@
 
 ##  Simple Blog System
-a basic blog system where you can view , create, edit, or delete posts
-first you need to have laravel 10 installed and xaamp 
-import sql file blogdb using php my admin
-you can log in with the user email aml@gmail.com and password 12345678 so you will log in as  an admin and you can edit or delete posts any other user will register as an ordinary user not as an admin.
-you can display all posts using this route http://127.0.0.1:8000/posts .
+
+-a basic blog system where you can view , create, edit, or delete posts
+-first you need to have laravel 10 installed and xaamp 
+-import sql file blogdb using php my admin
+-you can log in with the user email aml@gmail.com and password 12345678 so you will log in as  an admin and you can edit or delete posts any other user will register as an ordinary user not as an admin.
+-you can display all posts using this route http://127.0.0.1:8000/posts .
+-to create a new post use the route http://127.0.0.1:8000/createpost .
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -13,7 +15,7 @@ you can display all posts using this route http://127.0.0.1:8000/posts .
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
-## About Laravel
+ About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
